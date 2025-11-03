@@ -1,5 +1,6 @@
 package edu.icet.ecom.controller;
 
+import edu.icet.ecom.model.Customer;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,15 @@ public class CustomerController {
     }
 
     @GetMapping("/age")
-    public Integer getAge(){
+    public int getAge(){
         return 18;
+    }
+
+    @GetMapping("/details")
+    public Customer getCustomer(){
+        return new Customer(
+                "Dilaen",
+                27,
+                10000000.0);
     }
 }
